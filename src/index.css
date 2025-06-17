@@ -4,51 +4,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Vintage Pink Color Variables */
+    --vintage-pink-light: 350 100% 95%;
+    --vintage-pink-soft: 340 60% 85%;
+    --vintage-pink-medium: 330 45% 75%;
+    --vintage-pink-rose: 320 55% 65%;
+    --vintage-pink-dusty: 310 40% 55%;
+    --vintage-pink-deep: 300 35% 45%;
+    --vintage-cream: 30 20% 92%;
+    --vintage-brown: 25 25% 35%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --background: var(--vintage-cream);
+    --foreground: var(--vintage-brown);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--vintage-pink-light);
+    --card-foreground: var(--vintage-brown);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--vintage-pink-rose);
+    --primary-foreground: var(--vintage-brown);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--vintage-pink-soft);
+    --secondary-foreground: var(--vintage-brown);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: var(--vintage-pink-medium);
+    --accent-foreground: var(--vintage-brown);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: var(--vintage-pink-dusty);
+    --input: var(--vintage-pink-light);
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -91,11 +75,72 @@
 }
 
 @layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:wght@400;600&display=swap");
+
   * {
     @apply border-border;
+    text-transform: uppercase;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Crimson Text", serif;
+    background-image:
+      radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 182, 193, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 192, 203, 0.1) 0%,
+        transparent 50%
+      ),
+      linear-gradient(
+        135deg,
+        rgba(255, 228, 225, 0.05) 0%,
+        rgba(255, 182, 193, 0.05) 100%
+      );
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .vintage-paper {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--vintage-cream)) 0%,
+      hsl(var(--vintage-pink-light)) 100%
+    );
+    border: 2px solid hsl(var(--vintage-pink-medium));
+    box-shadow:
+      inset 0 0 20px rgba(255, 182, 193, 0.2),
+      0 4px 15px rgba(255, 182, 193, 0.3);
+  }
+
+  .vintage-text {
+    color: hsl(var(--vintage-brown));
+    letter-spacing: 0.05em;
+  }
+
+  .vintage-link {
+    color: hsl(var(--vintage-pink-deep));
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--vintage-pink-rose));
+    transition: all 0.3s ease;
+  }
+
+  .vintage-link:hover {
+    color: hsl(var(--vintage-pink-rose));
+    text-decoration-color: hsl(var(--vintage-pink-deep));
   }
 }
