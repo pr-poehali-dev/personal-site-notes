@@ -5,7 +5,7 @@ const Index = () => {
         {/* Header with Logo */}
         <header className="text-center mb-12 border-b-2 border-pink-300 pb-8">
           <h1 className="text-6xl font-bold vintage-text mb-2 tracking-wider">
-            ФАМИЛИЯ ОТЧЕСТВО
+            НЕУЙМИНА ВЕРОНИКА
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r from-pink-300 to-rose-400 mx-auto"></div>
         </header>
@@ -46,13 +46,20 @@ const Index = () => {
               <h2 className="text-2xl vintage-text mb-4 text-pink-800">
                 ДАТА РОЖДЕНИЯ
               </h2>
-              <p className="vintage-text text-lg">01 ЯНВАРЯ 1990 ГОДА</p>
+              <p className="vintage-text text-lg">27.12.2008</p>
             </div>
             <div className="vintage-paper p-6 rounded-lg">
               <h2 className="text-2xl vintage-text mb-4 text-pink-800">
                 МЕСТО РОЖДЕНИЯ
               </h2>
-              <p className="vintage-text text-lg">ГОРОД МОСКВА, РОССИЯ</p>
+              <p className="vintage-text text-lg">СЕЛО КАМЫШЕВО</p>
+              <div className="mt-4">
+                <img
+                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop"
+                  alt="Село Камышево"
+                  className="w-full h-32 object-cover rounded-lg border-2 border-pink-300"
+                />
+              </div>
             </div>
           </section>
 
@@ -80,18 +87,19 @@ const Index = () => {
             </h2>
             <div className="space-y-4 vintage-text text-lg leading-relaxed">
               <p>
-                ДОБРО ПОЖАЛОВАТЬ НА МОЮ ПЕРСОНАЛЬНУЮ СТРАНИЦУ! ЗДЕСЬ ВЫ НАЙДЕТЕ
-                ИНФОРМАЦИЮ О МОЕЙ ЖИЗНИ, УВЛЕЧЕНИЯХ И ДРУЗЬЯХ.
+                ДОБРО ПОЖАЛОВАТЬ НА МОЮ ПЕРСОНАЛЬНУЮ СТРАНИЦУ! МЕНЯ ЗОВУТ
+                ВЕРОНИКА НЕУЙМИНА, И ЗДЕСЬ ВЫ НАЙДЕТЕ ИНФОРМАЦИЮ О МОЕЙ ЖИЗНИ,
+                УВЛЕЧЕНИЯХ И ДРУЗЬЯХ.
               </p>
               <p>
-                Я РОДИЛСЯ В ПРЕКРАСНОМ ГОРОДЕ И С ДЕТСТВА УВЛЕКАЮСЬ МНОГИМИ
-                ИНТЕРЕСНЫМИ ВЕЩАМИ. МОЯ ЖИЗНЬ ПОЛНА ЯРКИХ МОМЕНТОВ И
-                НЕЗАБЫВАЕМЫХ ВСТРЕЧ.
+                Я РОДИЛАСЬ В ПРЕКРАСНОМ СЕЛЕ КАМЫШЕВО 27 ДЕКАБРЯ 2008 ГОДА. С
+                ДЕТСТВА УВЛЕКАЮСЬ МНОГИМИ ИНТЕРЕСНЫМИ ВЕЩАМИ. МОЯ ЖИЗНЬ ПОЛНА
+                ЯРКИХ МОМЕНТОВ И НЕЗАБЫВАЕМЫХ ВСТРЕЧ.
               </p>
               <p>
-                НА ЭТОМ САЙТЕ ВЫ МОЖЕТЕ ПОЗНАКОМИТЬСЯ С МОИМИ ДРУЗЬЯМИ,
-                ПОСМОТРЕТЬ ФОТОГРАФИИ И УЗНАТЬ БОЛЬШЕ О ТОМ, ЧТО МЕНЯ
-                ВДОХНОВЛЯЕТ.
+                У МЕНЯ ЕСТЬ ЗАМЕЧАТЕЛЬНЫЕ ДРУЗЬЯ - АНЯ, КИРИЛЛ И ИРА. НА ЭТОМ
+                САЙТЕ ВЫ МОЖЕТЕ ПОЗНАКОМИТЬСЯ С НИМИ, ПОСМОТРЕТЬ ФОТОГРАФИИ И
+                УЗНАТЬ БОЛЬШЕ О ТОМ, ЧТО МЕНЯ ВДОХНОВЛЯЕТ.
               </p>
             </div>
           </section>
@@ -102,15 +110,17 @@ const Index = () => {
               МОИ ДРУЗЬЯ
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {["АННА", "МИХАИЛ", "ЕЛЕНА"].map((name, index) => (
+              {["АНЯ", "КИРИЛЛ", "ИРА"].map((name, index) => (
                 <div
                   key={name}
                   className="text-center p-4 bg-pink-100 rounded-lg border border-pink-300"
                 >
-                  <div className="w-20 h-20 bg-pink-300 rounded-full mx-auto mb-3 flex items-center justify-center">
-                    <span className="vintage-text text-pink-700 text-sm">
-                      ФОТО
-                    </span>
+                  <div className="w-20 h-20 bg-pink-300 rounded-full mx-auto mb-3 overflow-hidden">
+                    <img
+                      src={`https://images.unsplash.com/photo-${index === 0 ? "1494790108755-2616da8c" : index === 1 ? "1507003211169-0a1dd7de" : "1438761681033-6461ffad8d"}?w=80&h=80&fit=crop&crop=face`}
+                      alt={name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="vintage-text text-pink-800 font-semibold">
                     {name}
